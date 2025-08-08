@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 def mask_account_card(number):
-
+    '''обрабатывает информацию как о картах, так и о счетах'''
     list_number = number.split()
     if 'Счет' == list_number[0]:
         mask = get_mask_account(list_number[-1])
@@ -16,6 +16,7 @@ def mask_account_card(number):
 
 
 def get_date(date):
+    '''возвращает даут из формата ISO'''
     # Преобразуем в объект datetime
     dt = datetime.fromisoformat(date)
     # Форматируем в нужный вид
